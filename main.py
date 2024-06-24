@@ -3,11 +3,10 @@ import sys
 
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication
-from PyQt5.QtWidgets import QTableWidgetItem, QDialog, QNewDialog
+from PyQt5.QtWidgets import QTableWidgetItem, QDialog, QMainWindow
 
 
-
-class NewEditDB(QNewDialog):
+class NewEditDB(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi("addEditCoffeeForm.ui", self)
@@ -49,9 +48,6 @@ class NewEditDB(QNewDialog):
             self.con.commit()
             self.modified.clear()
 
-    def closeEvent(self, event):
-        self.connection.close()
-
 
 class DBcoffee(QDialog):
     def __init__(self):
@@ -74,7 +70,7 @@ class DBcoffee(QDialog):
                     i, j, QTableWidgetItem(str(elem)))
 
     def add_item(self):
-        self.new_form = NewEditDB(self)
+        self.new_form = NewEditDB()
         self.new_form.show()
 
     def closeEvent(self, event):

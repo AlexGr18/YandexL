@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>NewDialog</class>
- <widget class="QNewDialog" name="NewDialog">
+ <widget class="QMainWindow" name="NewDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -73,14 +73,6 @@
    </property>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>QNewDialog</class>
-   <extends>QWidget</extends>
-   <header>qnewdialog.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
